@@ -1,3 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@fontsource/dm-sans"; 
+@import "@fontsource/dm-sans/400.css"; 
+@import "@fontsource/dm-sans/400-italic.css"; 
+
+@layer tailwind-base, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+  
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+body {
+    font-family: "DM Sans";
+}
+
+  
