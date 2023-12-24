@@ -1,13 +1,13 @@
-import Breadcrumbs from "./Breadcrumbs"
-import Navbar from "./Navbar"
-function Layout() {
+import Breadcrumbs from "./Breadcrumbs";
+import Navbar from "./Navbar";
+function Layout({ children }) {
   return (
     <>
-        <Navbar/>
-        <Breadcrumbs/>
-
+      <Navbar />
+      <Breadcrumbs />
+      <div className=" ">{children}</div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
