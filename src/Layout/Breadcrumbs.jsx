@@ -6,7 +6,7 @@ function Breadcrumbs() {
     const pathnames = location.pathname.split('/').filter((pathname) => pathname !== '');
   
     return (
-      <div className="h-11 border-b-2 border-light-gray px-7 flex items-center gap-5">
+      <div className="h-11 border-b-2 border-light-gray px-2 md:px-5 lg:px-7 flex items-center gap-5">
         <Link to="/">
           <img src={home} alt="home" className="size-6"/>
         </Link>
