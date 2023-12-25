@@ -5,7 +5,7 @@ function Layout({ children }) {
     <>
       <Navbar />
       <Breadcrumbs />
-      <div className=" ">{children}</div>
+      <div className="bg-light-gray h-screen p-2 md:p-5 lg:p-7">{children}</div>
     </>
   );
 }
