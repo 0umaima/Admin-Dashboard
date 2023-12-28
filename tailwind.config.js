@@ -20,7 +20,9 @@ export default {
         "light-pink": "#D235651A",
         "light-pink-1": "#E01461",
         "light-pink-2": "#D23565",
-        "raspberry" : "#D23565"
+        "raspberry" : "#D23565",
+        "light-yellow": "#FFCC9129"
+ 
       },
     },
   },
