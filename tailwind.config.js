@@ -5,6 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],  theme: {
     extend: {
+      fontFamily: {
+        DM: ['DM Sans', 'sans-serif'],
+        DMmono: ['DM Mono', 'monospace'],
+        Inter: ['Inter', 'sans-serif'],
+        Poppins:['Poppins', 'sans-serif']
+      },
       colors: {
         "light-gray": "#F1F3F9",
         "light-gray-1": "#787486",
@@ -13,6 +19,7 @@ export default {
         "dark-gray": "#45464E",
         "light-pink": "#D235651A",
         "light-pink-1": "#E01461",
+        "light-pink-2": "#D23565",
         "raspberry" : "#D23565"
       },
     },
