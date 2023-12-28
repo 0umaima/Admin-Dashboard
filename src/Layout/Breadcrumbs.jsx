@@ -6,8 +6,8 @@ function Breadcrumbs() {
     const pathnames = location.pathname.split('/').filter((pathname) => pathname !== '');
   
     return (
-      <div className="h-11 border-b-2 border-light-gray px-2 md:px-5 lg:px-7 flex items-center gap-5">
-        <Link to="/">
+      <div className="h-11 border-b-2 border-light-gray px-2 md:px-5 lg:px-7 flex items-center gap-5 font-DMmono">
+        <Link to="/home">
           <img src={home} alt="home" className="size-6"/>
         </Link>
         {pathnames.map((pathname, index) => {
@@ -15,7 +15,7 @@ function Breadcrumbs() {
           const isLast = index === pathnames.length - 1;
   
           return (
-            <div key={routePath} className="text-xl font-medium flex justify-center gap-5 text-light-gray-2">
+            <div key={routePath} className="text-xl font-light flex justify-center gap-5 text-light-gray-2">
               <span>/</span>
               {isLast ? (
                 <span>{pathname}</span>
