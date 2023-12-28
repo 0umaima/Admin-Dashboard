@@ -2,7 +2,7 @@ import bell from "../assets/icons/notification.svg"
 import logo from "../assets/logo.svg"
 function Navbar() {
   return (
-    <div className="w-full h-16 lg:h-20 border-b-2 border-light-gray flex justify-between items-center px-2 md:px-5 lg:px-7">
+    <div className="w-full h-16 lg:h-20 border-b-2 border-light-gray flex justify-between items-center px-2 md:px-5 lg:px-7 font-DM">
 
         <h1 className="text-xl lg:text-2xl font-semibold text-dark-gray">Dashboard</h1>
 
