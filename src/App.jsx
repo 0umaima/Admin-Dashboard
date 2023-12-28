@@ -11,10 +11,10 @@ function App() {
       <Router>
         <Routes>
          
-          <Route path="/" element={<Layout> <Home/> </Layout>} />
-          <Route path="/dashboard" element={<Layout> <Dashboard/> </Layout>} />
-          <Route path="/add-product" element={<Layout> <AddProduct/> </Layout>} />
-          <Route path="/profile" element={<Layout> <Profile/> </Layout>} />
+          <Route path="/home" element={<Layout> <Home/> </Layout>} />
+          <Route path="/home/dashboard" element={<Layout> <Dashboard/> </Layout>} />
+          <Route path="/home/dashboard/add-product" element={<Layout> <AddProduct/> </Layout>} />
+          <Route path="/home/profile" element={<Layout> <Profile/> </Layout>} />
 
         </Routes>
       </Router>
