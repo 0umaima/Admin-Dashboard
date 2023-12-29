@@ -17,11 +17,14 @@ export default {
         "light-gray-2": "#8B8D97",
         "light-gray-3": "#BEC0CA",
         "dark-gray": "#45464E",
+        "lighter-gray":"#DBDEEE",
+        "whiter":"#FFFFFF29",
         "light-pink": "#D235651A",
         "light-pink-1": "#E01461",
         "light-pink-2": "#D23565",
         "raspberry" : "#D23565",
-        "light-yellow": "#FFCC9129"
+        "light-yellow": "#FFCC9129",
+        "red":"#CC5F5F",
  
       },
     },
