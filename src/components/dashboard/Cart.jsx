@@ -1,4 +1,3 @@
-import React from 'react'
 //import hooks
 import { useListOptions } from '../../hooks/useListOptions';
 //import icons
@@ -28,7 +27,6 @@ function Cart() {
         <div className="flex items-center gap-3">
           <span
             className="text-light-gray-3 font-light font-Inter"
-            listChoice={listChoice}
           >
             {listChoice}
           </span>
