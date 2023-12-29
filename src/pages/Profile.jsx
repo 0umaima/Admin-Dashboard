@@ -1,8 +1,7 @@
-import React from 'react'
-
+import Layout from "../Layout/Layout"
 function Profile() {
   return (
-    <>Profile</>
+    <Layout>Profile</Layout>
   )
 }
 
