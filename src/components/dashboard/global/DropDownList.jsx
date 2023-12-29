@@ -17,14 +17,14 @@ function DropDownList() {
           dismissOnClick={false}
           renderTrigger={() => (
             <div className="flex items-center gap-3">
-              <span className="text-light-gray-3 font-light font-Inter">
+              <span className="text-light-gray-3 font-light font-Inter text-lg md:text-base">
                 {listChoice}
               </span>
               <button>
                 <img
                   src={arrow}
                   alt="arrow-down"
-                  className="size-5"
+                  className="size-6 md:size-5"
                 />
               </button>
             </div>
