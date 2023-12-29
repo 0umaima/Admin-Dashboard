@@ -19,6 +19,8 @@ export default {
         "light-gray-3": "#BEC0CA",
         "dark-gray": "#45464E",
         "lighter-gray":"#DBDEEE",
+        "border-gray":"#E1E2E9",
+        "main-gray":"#F4F5FA",
         "whiter":"#FFFFFF29",
         "light-pink": "#D235651A",
         "light-pink-1": "#E01461",
