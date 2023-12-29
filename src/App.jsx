@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./Layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
@@ -11,10 +10,10 @@ function App() {
       <Router>
         <Routes>
          
-          <Route path="/home" element={<Layout> <Home/> </Layout>} />
-          <Route path="/home/dashboard" element={<Layout> <Dashboard/> </Layout>} />
-          <Route path="/home/dashboard/add-product" element={<Layout> <AddProduct/> </Layout>} />
-          <Route path="/home/profile" element={<Layout> <Profile/> </Layout>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/home/dashboard" element={<Dashboard/>} />
+          <Route path="/home/dashboard/add-product" element={<AddProduct/>} />
+          <Route path="/home/profile" element={<Profile/>} />
 
         </Routes>
       </Router>
