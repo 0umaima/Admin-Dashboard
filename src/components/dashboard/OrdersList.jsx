@@ -6,7 +6,7 @@ function OrdersList() {
   return (
     <div
       id="orders-list"
-      className="bg-white rounded-xl row-start-7 md:row-start-7 md:row-end-10 md:col-start-1 md:col-end-5 lg:row-start-2 lg:col-start-5 lg:row-end-6 lg:col-end-8 p-5 flex flex-col h-full"
+      className="bg-white rounded-xl row-start-8 row-end-10 md:row-start-7 md:row-end-11 md:col-start-1 md:col-end-5 lg:row-start-2 lg:col-start-5 lg:row-end-6 lg:col-end-8 p-5 flex flex-col h-full"
     >
       <h1 className="h-[10%] text-dark-gray font-medium text-lg font-Inter">
         Recent Orders
