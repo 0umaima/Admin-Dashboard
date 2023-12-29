@@ -28,7 +28,9 @@ export default {
         "raspberry" : "#D23565",
         "light-yellow": "#FFCC9129",
         "red":"#CC5F5F",
- 
+        "gray-text-color":"#A6A8B1",
+        "chart-bleu":"#97A5EB",
+        "chart-yellow":"#FFCC91",
       },
     },
   },
