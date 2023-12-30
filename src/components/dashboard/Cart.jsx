@@ -3,7 +3,7 @@ import cart from "../../assets/icons/cart.svg";
 //import components
 import DropDownList from "./global/DropDownList"
 function Cart() {
- 
+  const choices = ['Last Week', 'Last Month', 'Last Year'];
 
   return (
     <div
@@ -18,7 +18,7 @@ function Cart() {
             className="size-7 md:size-6"
           />
         </div>
-        <DropDownList/>
+        <DropDownList choices={choices} className="text-light-gray-3"/>
         
       </div>
       <div className="flex items-center gap-8 md:gap-16 lg:gap-5 xl:gap-16">

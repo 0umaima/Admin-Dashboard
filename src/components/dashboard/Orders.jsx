@@ -3,6 +3,8 @@ import smallBag from "../../assets/icons/small-bag.svg";
 //import components
 import DropDownList from "./global/DropDownList"
 function Orders() {
+  const choices = ['Last Week', 'Last Month', 'Last Year'];
+
   return (
     <div
         id="orders"
@@ -16,7 +18,7 @@ function Orders() {
             className="size-7 md:size-6"
           />
         </div>
-        <DropDownList/>
+        <DropDownList choices={choices} className="text-light-gray-3"/>
         
       </div>
       <div className="flex items-center gap-8 md:gap-36 lg:gap-11 xl:gap-28">

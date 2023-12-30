@@ -5,7 +5,7 @@ import sales from "../../assets/icons/sales.svg";
 
 
 function Sales() {
- 
+  const choices = ['Last Week', 'Last Month', 'Last Year'];
 
   return (
     <div
@@ -16,7 +16,7 @@ function Sales() {
         <div className="bg-light-pink size-12 md:size-10 rounded-lg flex items-center justify-center">
           <img src={sales} alt="Sales" className="size-7 md:size-6" />
         </div>
-        <DropDownList/>
+        <DropDownList choices={choices} className="text-light-gray-3"/>
       </div>
       <div className="flex items-center gap-14 md:gap-16 lg:gap-11 xl:gap-16">
         <div className="flex flex-col justify-start  gap-3">
