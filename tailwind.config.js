@@ -31,6 +31,7 @@ export default {
         "gray-text-color":"#A6A8B1",
         "chart-bleu":"#97A5EB",
         "chart-yellow":"#FFCC91",
+        "black01":"#1C1D22",
       },
     },
   },
