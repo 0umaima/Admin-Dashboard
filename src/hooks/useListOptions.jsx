@@ -1,28 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 
-export const useListOptions = () => {
-  const [listClick, setListClick] = useState(false);
-  const [listChoice, setListChoice] = useState('This Week');
+export const useListOptions = (initialChoices) => {
+  const [choices, setChoices] = useState(initialChoices);
+  const [listChoice, setListChoice] = useState(choices[0]);
+  useEffect(() => {
+    setChoices(initialChoices);
+    setListChoice(initialChoices[0]);
+  }, [initialChoices]);
 
-  const handleListClick = () => {
-    setListClick(!listClick);
-  };
 
   const handleListChoice = (choice) => {
     setListChoice(choice);
-    setListClick(false);
   };
 
   const renderChoice = (choice) => {
     return (
-      <button className='hover:text-light-gray-1' onClick={() => handleListChoice(choice)}>{choice}</button>
+      <button 
+      key={choice}
+      className='hover:text-light-gray-1 font-inter' onClick={() => handleListChoice(choice)}>{choice}</button>
     );
   };
 
   return {
-    listClick,
     listChoice,
-    handleListClick,
     renderChoice,
   };
 };
