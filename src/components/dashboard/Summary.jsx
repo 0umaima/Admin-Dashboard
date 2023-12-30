@@ -4,9 +4,6 @@ import DropDownList from "./global/DropDownList";
 // import icon
 import arrow from "../../assets/icons/fi_chevron-down.svg";
 import { Dropdown } from "flowbite-react";
-//import Charts
-import { Bar } from "react-chartjs-2";
-import BarData from "./charts/Bar";
 
 function Summary() {
   const choices = ["Last 7 Days", "Last 30 Days", "Last 365 Days"];
