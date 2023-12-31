@@ -7,7 +7,7 @@ function Breadcrumbs() {
   
     return (
       <div className="h-11 border-b-2 border-light-gray px-2 md:px-5 lg:px-7 flex items-center gap-3 md:gap-5 font-DMmono">
-        <Link to="/home">
+        <Link to="/">
           <img src={home} alt="home" className="size-4 md:size-5"/>
         </Link>
         {pathnames.map((pathname, index) => {
