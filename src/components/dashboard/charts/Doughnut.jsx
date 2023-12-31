@@ -3,6 +3,15 @@ import {Doughnut} from 'react-chartjs-2';
 
 Chart.register(ArcElement, Tooltip, Legend, Title);
 
+const options = {
+  plugins: {
+    legend: {
+      display: false, // Set to false to hide the legend
+    },
+  },
+};
+
+
 const data = {
   labels: [
     'Acquisition',
@@ -17,15 +26,15 @@ const data = {
       '#D23565'
     ],
     borderWidth: 2,
-    radius: '50%'   
+    radius: '100%'   
   }]
 };
 
 function DoughnutData() {
   return (
-    <>
-        <Doughnut data={data} />
-    </>
+    <div className=''>
+        <Doughnut data={data} options={options}/>
+    </div>
   );
 }
 
