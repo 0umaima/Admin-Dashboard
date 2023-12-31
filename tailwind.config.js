@@ -26,6 +26,7 @@ export default {
         "light-pink-1": "#E01461",
         "light-pink-2": "#D23565",
         "light-pink-3":"#D2356514",
+        "logo-pink":"#E0146163",
         "raspberry" : "#D23565",
         "light-yellow": "#FFCC9129",
         "red":"#CC5F5F",
