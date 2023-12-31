@@ -4,6 +4,8 @@ import bell from "../assets/icons/notification.svg";
 import logo from "../assets/logo.svg";
 //import flowbite components
 import { Dropdown } from "flowbite-react";
+import { HiCog, HiCurrencyDollar, HiLogout, HiViewGrid } from 'react-icons/hi';
+
 
 function Navbar() {
   const [profileClick, setProfileClick] = useState(false);
@@ -32,33 +34,40 @@ function Navbar() {
             Company LLC
           </h1>
         </div>
-        {profileClick && (
-        <Dropdown
-          label=""
-          dismissOnClick={false}
-          renderTrigger={() => (
+        <div className="flex flex-col gap-28" onClick={handleProfileClick}>
+          {profileClick ? (
+            <Dropdown
+              label=""
+              dismissOnClick={false}
+              renderTrigger={() => (
+                <img
+                  src={logo}
+                  alt="Profile"
+                  className="size-9 lg:size-11 relative"
+                />
+              )}
+            >
+              <Dropdown.Header className="block lg:hidden">
+                <h1 className="text-lg font-medium ">Anima Agrawal</h1>
+                <h1 className="text-sm font-medium text-light-gray-1">
+                  Company LLC
+                </h1>
+              </Dropdown.Header>
+              <Dropdown.Item icon={HiViewGrid}>Dashboard</Dropdown.Item>
+              <Dropdown.Item icon={HiCog}>Settings</Dropdown.Item>
+              <Dropdown.Item icon={HiCurrencyDollar}>Earnings</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item icon={HiLogout}>Sign out</Dropdown.Item>
+            </Dropdown>
+          ) : (
             <img
               src={logo}
               alt="Profile"
-              className="size-9 lg:size-11"
+              className="size-9 lg:size-11 relative"
             />
           )}
-        >
-          <Dropdown.Header className="block lg:hidden">
-           <h1 className="text-lg font-medium ">Anima Agrawal</h1>
-          <h1 className="text-sm font-medium text-light-gray-1">
-            Company LLC
-          </h1>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
-      )}
+        </div>
       </div>
-     
     </div>
   );
 }
