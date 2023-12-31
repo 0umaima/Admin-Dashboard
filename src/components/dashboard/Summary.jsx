@@ -4,6 +4,7 @@ import DropDownList from "./global/DropDownList";
 // import icon
 import arrow from "../../assets/icons/fi_chevron-down.svg";
 import { Dropdown } from "flowbite-react";
+import ChartBar from "./charts/ChartBar";
 
 function Summary() {
   const choices = ["Last 7 Days", "Last 30 Days", "Last 365 Days"];
@@ -22,7 +23,7 @@ function Summary() {
   return (
     <div
       id="summary"
-      className="bg-white rounded-xl row-start-10 row-end-12 md:row-start-5 md:row-end-7 md:col-end-5 md:col-start-1 lg:row-start-4  lg:row-end-6 p-5 flex flex-col h-full font-Inter gap-5"
+      className="bg-white rounded-xl row-start-10 row-end-12 md:row-start-5 md:row-end-7 md:col-end-5 md:col-start-1 lg:row-start-4  lg:row-end-6 p-5 flex flex-col h-auto font-Inter gap-5 "
     >
       {/* Heading */}
       <div className="flex justify-start  md:items-center md:justify-between">
@@ -68,7 +69,8 @@ function Summary() {
         </div>
       </div>
       {/* Bars Chart */}
-      <div className="flex items-center">
+      <div className="h-auto w-ful flex justify-center">
+        <ChartBar/>
       </div>
     </div>
   );
