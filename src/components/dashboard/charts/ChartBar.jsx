@@ -34,7 +34,7 @@ const data = {
         topRight: 100,
         bottomRight: 100,
         bottomLeft: 100,
-      }
+      },
     },
   ],
 };
@@ -50,17 +50,17 @@ const options = {
     animation: {
       duration: 0, // Disable animations by setting duration to 0
     },
+    legend: {
+      display: false, // Set to false to hide the legend
+    },
   },
   scales: {
     x: {
-      // display: false, 
-     
+      // display: false,
       offset: true,
-      ticks: {
-        display: true,
-      },
       ticks:{
-        color: '#BEC0CA'
+        color: '#BEC0CA',
+        display: true
       },
       border :{
         display: false,
@@ -92,7 +92,7 @@ const options = {
 
           return value != 0 ? value + 'k' : '';
         },
-        stepSize: 20,    // Set the step size
+        stepSize:20,    // Set the step size
         color: '#BEC0CA'
       },
       beginAtZero: true,
@@ -104,19 +104,15 @@ const options = {
       }
     },
   },
-  plugins: {
-    legend: {
-      display: false, // Set to false to hide the legend
-    },
-  },
   responsive: true,
+  maintainAspectRatio: false,
 };
 
 
 
 function ChartBar() {
   return (
-    <Bar data={data} options={options} style={{ height: '400px', width: '600px' }}/>
+    <Bar data={data} options={options}/>
   );
 }
 

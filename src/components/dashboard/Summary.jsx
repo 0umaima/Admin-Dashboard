@@ -18,8 +18,6 @@ function Summary() {
     setListCategoryChoice(category);
   };
 
-
-
   return (
     <div
       id="summary"
@@ -69,8 +67,11 @@ function Summary() {
         </div>
       </div>
       {/* Bars Chart */}
-      <div className="h-auto w-ful flex justify-center">
-        <ChartBar/>
+
+      <div className="w-full h-full flex items-center justify-center">
+        <div className=" h-full w-full">
+          <ChartBar />
+        </div>
       </div>
     </div>
   );
