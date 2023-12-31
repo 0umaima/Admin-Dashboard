@@ -43,7 +43,7 @@ function Marketing() {
         </div>
       </div>
       {/* Chart */}
-      <div className="flex justify-center items-center">
+      <div className="h-full w-full flex justify-center items-center">
         <DoughnutData/>
       </div>
     </div>
