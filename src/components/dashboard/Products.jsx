@@ -1,6 +1,28 @@
+import{ useState, useEffect } from "react";
 //import icons
 import folder from "../../assets/icons/Folder.svg";
+//import db 
+import productsData from "../../../db.json"
 function Products() {
+  const [allProductsCount, setAllProductsCount] = useState(0);
+  const [activeProductsCount, setActiveProductsCount] = useState(0);
+
+  useEffect(() => {
+    // Update the counts when the component mounts
+    updateProductCounts();
+  }, []);
+
+  // Function to update the product counts based on the data
+  const updateProductCounts = () => {
+    setAllProductsCount(productsData.products.length);
+
+    const activeProducts = productsData.products.filter(
+      (product) => product.productStatus === "active"
+    );
+    setActiveProductsCount(activeProducts.length);
+  };
+
+
   return (
     <div
         id="products"
@@ -23,7 +45,7 @@ function Products() {
           </span>
           <div className="flex items-center gap-2">
             <span className="text-2xl md:text-xl xl:text-2xl font-medium text-white font-Poppins">
-              0
+              {allProductsCount}
             </span>
             <span className="text-sm md:text-xs font-normal text-lighter-gray font-Inter">
               +0.00%
@@ -36,7 +58,7 @@ function Products() {
           </span>
           <div className="flex items-center gap-2">
             <span className="text-2xl md:text-xl xl:text-2xl font-medium text-white font-Poppins">
-              0
+            {activeProductsCount}
             </span>
             <span className="text-sm md:text-xs font-normal text-lighter-gray font-Inter">
               +0.00%
