@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react";
 //import icons
 import smallBag from "../../assets/icons/small-bag.svg";
 //import components
 import DropDownList from "./global/DropDownList"
+//import db 
+import ordersDb from "../../../db.json"
 function Orders() {
   const choices = ['Last Week', 'Last Month', 'Last Year'];
+
+  const [allOrders, setAllOrders] = useState(0);
+  const [pendingOrders, setPendingOrders] = useState(0);
+  const [completedOrders, setCompletedOrders] = useState(0);
+
+  useEffect(() => {
+    // Set the initial state using the data from db.json
+    setAllOrders(ordersDb.orders);
+    setPendingOrders(ordersDb.orders.filter((order) => order.status === "pending"));
+    setCompletedOrders(ordersDb.orders.filter((order) => order.status === "completed"));
+  }, []);
+
 
   return (
     <div
@@ -27,7 +42,8 @@ function Orders() {
             All Orders
           </span>
             <span className="text-2xl md:text-xl xl:text-2xl font-medium text-dark-gray font-Poppins">
-              0
+            {allOrders.length}
+
             </span>
         </div>
         <div className="flex flex-col justify-start gap-3">
@@ -35,7 +51,7 @@ function Orders() {
            Pending
           </span>
             <span className="text-2xl md:text-xl xl:text-2xl font-medium text-dark-gray font-Poppins">
-              0
+            {pendingOrders.length}
             </span>
         </div>
         <div className="flex flex-col justify-start  gap-3">
@@ -44,10 +60,11 @@ function Orders() {
           </span>
           <div className="flex items-center gap-2">
             <span className="text-2xl md:text-xl xl:text-2xl font-medium text-dark-gray font-Poppins">
-              0
+            {completedOrders.length}
             </span>
             <span className="text-sm md:text-xs font-normal text-green-600 font-Inter">
-              +0.00%
+              +{((completedOrders.length / allOrders.length) * 100).toFixed(2)}%
+
             </span>
           </div>
         </div>
