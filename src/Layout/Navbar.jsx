@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 //import icons
 import bell from "../assets/icons/notification.svg";
 import logo from "../assets/logo.svg";
@@ -50,8 +51,12 @@ function Navbar() {
                   Company LLC
                 </h1>
               </Dropdown.Header>
-              <Dropdown.Item icon={HiViewGrid}>Dashboard</Dropdown.Item>
-              <Dropdown.Item icon={HiCog}>Settings</Dropdown.Item>
+              <Link to={"/dashboard"}>
+                <Dropdown.Item icon={HiViewGrid}>Dashboard</Dropdown.Item>
+              </Link>
+              <Link to={"/add-product"}>
+                <Dropdown.Item icon={HiCog}>Add product</Dropdown.Item>
+              </Link>
               <Dropdown.Item icon={HiCurrencyDollar}>Earnings</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item icon={HiLogout}>Sign out</Dropdown.Item>
