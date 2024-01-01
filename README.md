@@ -1,8 +1,28 @@
-# React + Vite
+# Admine-Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The Admin Project is a web-based application designed to provide administrative functionality for managing various aspects of a system or platform. It serves as a centralized hub for admin to preview analytics and add new  products.
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup
+1. Make sure you have Node.js installed on your machine.
+2. Install project dependencies by running the following command:
+```
+npm install
+```
+
+## Running the Project
+1. To start the development server, run the following command:
+```
+npm run dev
+```
+2. Start the JSON server by running the following command:
+```
+npx json-server --watch db.json --port 3001
+```
+This will start a local server at http://localhost:3001 and serve the db.json data.
+
+
