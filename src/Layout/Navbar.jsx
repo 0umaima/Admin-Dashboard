@@ -39,9 +39,9 @@ function Navbar() {
               label=""
               dismissOnClick={false}
               renderTrigger={() => (
-                <div className="bg-logo-pink size-9 lg:size-12 flex items-center justify-center rounded-xl">
+                <button className="bg-logo-pink size-9 lg:size-12 flex items-center justify-center rounded-xl">
                   <img src={logo} alt="Profile" className="size-6 lg:size-9" />
-                </div>
+                </button>
               )}
             >
               <Dropdown.Header className="block lg:hidden">
@@ -57,9 +57,9 @@ function Navbar() {
               <Dropdown.Item icon={HiLogout}>Sign out</Dropdown.Item>
             </Dropdown>
           ) : (
-            <div className="bg-logo-pink size-9 lg:size-12 flex items-center justify-center rounded-xl">
+            <button className="bg-logo-pink size-9 lg:size-12 flex items-center justify-center rounded-xl">
               <img src={logo} alt="Profile" className="size-6 lg:size-9" />
-            </div>
+            </button>
           )}
         </div>
       </div>
