@@ -24,7 +24,7 @@ function Summary() {
       className="bg-white rounded-xl row-start-10 row-end-12 md:row-start-5 md:row-end-7 md:col-end-5 md:col-start-1 lg:row-start-4  lg:row-end-6 p-5 flex flex-col h-auto font-Inter gap-5 "
     >
       {/* Heading */}
-      <div className="flex justify-start  md:items-center md:justify-between">
+      <div className="block md:flex md:items-center md:justify-between">
         <div className="flex gap-16  md:items-center  md:gap-4 ">
           <h1 className="text-dark-gray font-medium text-lg px-1">Summary</h1>
           <div className="flex flex-col justify-end  gap-5 pt-2 ml-auto">
