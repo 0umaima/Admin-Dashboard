@@ -1,24 +1,58 @@
 import Layout from "../Layout/Layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { TextInput, Textarea, Button, Select, Toast } from "flowbite-react";
 import { HiCheck } from "react-icons/hi";
+
 
 function AddProduct() {
   const {
     handleSubmit,
     control,
-    formState: { errors, isSubmitted },
+    formState: { errors },
+    reset,
   } = useForm();
 
   const [showToast, setShowToast] = useState(false);
-  const onSubmit = (data) => {
-    console.log(data);
 
-    if (Object.keys(errors).length === 0) {
-      setShowToast(true);
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3001/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setShowToast(true);
+        reset({
+          productTitle: "", 
+          productRef: "",
+          productPrice: "",
+          productStatus: "",
+          productDescription: "",
+        });
+      } else {
+        throw new Error("Failed to add product");
+      }
+    } catch (error) {
+      console.error(error);
     }
+
+  
   };
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000); // Hide the toast after 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
 
   return (
     <Layout>
@@ -39,7 +73,12 @@ function AddProduct() {
               name="productTitle"
               rules={{ required: true, maxLength: 20 }}
               render={({ field }) => (
-                <TextInput type="text" id="productTitle" {...field} />
+                <TextInput
+                  type="text"
+                  id="productTitle"
+                  ref={field.ref}
+                  {...field}
+                />
               )}
             />
             {errors.productTitle && errors.productTitle.type === "required" && (
@@ -61,9 +100,10 @@ function AddProduct() {
               rules={{ required: true, pattern: /^[A-Z]{2}-\d{4}$/ }}
               render={({ field }) => (
                 <TextInput
-                  id="Currency"
+                  id="productRef"
                   placeholder="XX-0000"
                   addon="#"
+                  ref={field.ref}
                   {...field}
                 />
               )}
@@ -87,6 +127,7 @@ function AddProduct() {
                   type="number"
                   id="productPrice"
                   addon="MAD"
+                  ref={field.ref}
                   {...field}
                 />
               )}
@@ -129,6 +170,7 @@ function AddProduct() {
                 <Textarea
                   id="productDescription"
                   placeholder="Describe this product..."
+                  ref={field.ref}
                   {...field}
                 />
               )}
@@ -150,7 +192,7 @@ function AddProduct() {
           </Button>
         </form>
         {/* Show the toast if form is submitted and has no errors */}
-        {showToast && Object.keys(errors).length === 0 && (
+        {showToast  && (
           <Toast className="absolute top-0 right-0">
             <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
               <HiCheck className="h-5 w-5" />
