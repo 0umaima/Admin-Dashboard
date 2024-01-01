@@ -56,7 +56,7 @@ function AddProduct() {
 
   return (
     <Layout>
-      <div className="h-full flex flex-col items-center justify-center w-full relative">
+      <div className="h-screen flex flex-col items-center justify-center w-full relative">
         <div className="w-56 md:w-72 rounded-lg bg-light-pink flex items-center justify-center p-3 md:p-5 my-11 ">
           <h1 className="font-Poppins font-medium text-lg md:text-xl lg:text-2xl text-raspberry">
             Add A New Product
