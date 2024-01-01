@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "productTitle": "Produuuuct",
+      "productRef": "BB-2222",
+      "productPrice": "20",
+      "productStatus": "active",
+      "productDescription": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "id": 1
+    },
+    {
+      "productTitle": "Test1",
+      "productRef": "DD-3333",
+      "productPrice": "20",
+      "productStatus": "active",
+      "productDescription": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "id": 2
+    },
+    {
+      "productTitle": "Product 1",
+      "productRef": "DD-3333",
+      "productPrice": "20",
+      "productStatus": "inactive",
+      "productDescription": "Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "id": 3
+    },
+    {
+      "productTitle": "Product 2 ",
+      "productRef": "TT-9999",
+      "productPrice": "90",
+      "productStatus": "active",
+      "productDescription": "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGgggggggggggghhhhhhhhhh",
+      "id": 4
+    },
+    {
+      "productTitle": "Produuct",
+      "productRef": "BB-2222",
+      "productPrice": "20",
+      "productStatus": "inactive",
+      "productDescription": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "id": 5
+    },
+    {
+      "productTitle": "Product 5",
+      "productRef": "TT-9999",
+      "productPrice": "333",
+      "productStatus": "inactive",
+      "productDescription": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "id": 6
+    }
+   
+  ]
+}
