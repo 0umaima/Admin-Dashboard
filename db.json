@@ -49,5 +49,11 @@
       "id": 6
     }
    
-  ]
+  ],
+  
+  "cart": {
+    "abandonedCartPercentage": 10,
+    "percentageChange": 2.5,
+    "customerCount": 500
+  }
 }
