@@ -54,6 +54,83 @@
   "cart": {
     "abandonedCartPercentage": 10,
     "percentageChange": 2.5,
-    "customerCount": 500
-  }
+    "customerCount": 10
+  }, 
+
+  "customers": {
+  "activeCustomersPercentage": 1.2,
+  "customersPercentage": 2.9,
+  "customersData":[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "name": "Lame Smith",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "name": "Jamila Smith",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "name": "Oumaima Smith",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "name": "Emma Smith",
+      "isActive": true
+    },
+    {
+      "id": 7,
+      "name": "Mima Smith",
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "name": "Tema Smith",
+      "isActive": true
+    }
+  ]},
+  
+    "sales": {
+      "amount": 78,
+      "percentage": 5,
+      "volume": 437
+    },
+
+    "orders": [
+      {
+        "orderRef": "ORD-001",
+        "status": "pending"
+      },
+      {
+        "orderRef": "ORD-002",
+        "status": "completed"
+      },
+      {
+        "orderRef": "ORD-003",
+        "status": "pending"
+      },
+      {
+        "orderRef": "ORD-004",
+        "status": "completed"
+      },
+      {
+        "orderRef": "ORD-005",
+        "status": "onHold"
+      }
+    ]
+
+  
 }
