@@ -1,52 +1,166 @@
 import Layout from "../Layout/Layout";
-import {
-  TextInput,
-  Button,
-  Checkbox,
-  Label,
-  Dropdown,
-  FloatingLabel,
-} from "flowbite-react";
+import { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { TextInput, Textarea, Button, Select, Toast } from "flowbite-react";
+import { HiCheck } from "react-icons/hi";
 
 function AddProduct() {
+  const {
+    handleSubmit,
+    control,
+    formState: { errors, isSubmitted },
+  } = useForm();
+
+  const [showToast, setShowToast] = useState(false);
+  const onSubmit = (data) => {
+    console.log(data);
+
+    if (Object.keys(errors).length === 0) {
+      setShowToast(true);
+    }
+  };
+
   return (
     <Layout>
-      <div className="h-screen flex flex-col items-center w-full">
-        <div className=" w-72 rounded-lg bg-light-pink flex items-center justify-center p-5 mb-20">
-          <h1 className="font-Poppins font-medium text-2xl text-raspberry">
+      <div className="h-full flex flex-col items-center justify-center w-full relative">
+        <div className="w-56 md:w-72 rounded-lg bg-light-pink flex items-center justify-center p-3 md:p-5 my-11 ">
+          <h1 className="font-Poppins font-medium text-lg md:text-xl lg:text-2xl text-raspberry">
             Add A New Product
           </h1>
         </div>
-        <form className="w-[40%] gap-5">
-          <div className="mb-2">
-            <Label htmlFor="Title" value="Product Title*" />
-            <TextInput
-              id="Title"
-              type="Title"
-              placeholder="Your product title here"
-              required
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] h-full font-DM text-gray-600 flex flex-col gap-5"
+        >
+          <div className="">
+            <label htmlFor="productTitle">Product Title</label>
+            <Controller
+              control={control}
+              name="productTitle"
+              rules={{ required: true, maxLength: 20 }}
+              render={({ field }) => (
+                <TextInput type="text" id="productTitle" {...field} />
+              )}
             />
+            {errors.productTitle && errors.productTitle.type === "required" && (
+              <span className="text-raspberry">This field is required</span>
+            )}
+            {errors.productTitle &&
+              errors.productTitle.type === "maxLength" && (
+                <span className="text-raspberry">
+                  The title must not exceed 20 characters
+                </span>
+              )}
           </div>
-          <div className="mb-2">
-            <Label htmlFor="SubTitle" value="Product SubTitle" />
-            <TextInput
-              id="SubTitle"
-              type="SubTitle"
-              placeholder="Your product title here"
+
+          <div className="flowbite-form-group">
+            <label htmlFor="productRef">Product Reference</label>
+            <Controller
+              control={control}
+              name="productRef"
+              rules={{ required: true, pattern: /^[A-Z]{2}-\d{4}$/ }}
+              render={({ field }) => (
+                <TextInput
+                  id="Currency"
+                  placeholder="XX-0000"
+                  addon="#"
+                  {...field}
+                />
+              )}
             />
+            {errors.productRef && errors.productRef.type === "required" && (
+              <span className="text-raspberry">This field is required</span>
+            )}
+            {errors.productRef && errors.productRef.type === "pattern" && (
+              <span className="text-raspberry">Invalid product reference</span>
+            )}
           </div>
-          <Dropdown label="Product Type" dismissOnClick={false}>
-            <Dropdown.Item>Phones</Dropdown.Item>
-            <Dropdown.Item>Watches</Dropdown.Item>
-            <Dropdown.Item>Tablets</Dropdown.Item>
-            <Dropdown.Item>HeadPhones</Dropdown.Item>
-          </Dropdown>
-          <div className="flex items-center gap-2">
-            <Checkbox id="Active" name="active"/>
-            <Label htmlFor="Active">Activate</Label>
+
+          <div className="flowbite-form-group">
+            <label htmlFor="productPrice">Product Price</label>
+            <Controller
+              control={control}
+              name="productPrice"
+              rules={{ required: true, min: 10, max: 10000 }}
+              render={({ field }) => (
+                <TextInput
+                  type="number"
+                  id="productPrice"
+                  addon="MAD"
+                  {...field}
+                />
+              )}
+            />
+            {errors.productPrice && errors.productPrice.type === "required" && (
+              <span className="text-raspberry">This field is required</span>
+            )}
+            {errors.productPrice &&
+              (errors.productPrice.type === "min" ||
+                errors.productPrice.type === "max") && (
+                <span className="text-raspberry">Invalid product price</span>
+              )}
           </div>
-          <Button type="submit">Add New Product</Button>
+
+          <div className="flowbite-form-group">
+            <label htmlFor="productStatus">Set Product Status</label>
+            <Controller
+              control={control}
+              name="productStatus"
+              rules={{ required: true, maxLength: 20 }}
+              render={({ field }) => (
+                <Select id="productStatus" required {...field}>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </Select>
+              )}
+            />
+            {errors.productStatus && (
+              <span className=" text-raspberry">This field is required</span>
+            )}
+          </div>
+
+          <div className="flowbite-form-group">
+            <label htmlFor="productDescription">Product Description</label>
+            <Controller
+              control={control}
+              name="productDescription"
+              rules={{ required: true, minLength: 50 }}
+              render={({ field }) => (
+                <Textarea
+                  id="productDescription"
+                  placeholder="Describe this product..."
+                  {...field}
+                />
+              )}
+            />
+            {errors.productDescription &&
+              errors.productDescription.type === "required" && (
+                <span className="text-raspberry">This field is required</span>
+              )}
+            {errors.productDescription &&
+              errors.productDescription.type === "minLength" && (
+                <span className="text-raspberry">
+                  Please provide at least 50 characters description
+                </span>
+              )}
+          </div>
+
+          <Button type="submit" className="mb-9">
+            Add Product
+          </Button>
         </form>
+        {/* Show the toast if form is submitted and has no errors */}
+        {showToast && Object.keys(errors).length === 0 && (
+          <Toast className="absolute top-0 right-0">
+            <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
+              <HiCheck className="h-5 w-5" />
+            </div>
+            <div className="ml-3 text-sm font-normal">
+              Product Added successfully.
+            </div>
+            <Toast.Toggle />
+          </Toast>
+        )}
       </div>
     </Layout>
   );
