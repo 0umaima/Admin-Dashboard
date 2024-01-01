@@ -25,7 +25,7 @@ function Summary() {
     >
       {/* Heading */}
       <div className="flex justify-start  md:items-center md:justify-between">
-        <div className="flex  md:items-center  md:gap-4 ">
+        <div className="flex gap-16  md:items-center  md:gap-4 ">
           <h1 className="text-dark-gray font-medium text-lg px-1">Summary</h1>
           <div className="flex flex-col justify-end  gap-5 pt-2 ml-auto">
             <div className="md:hidden">
@@ -43,7 +43,10 @@ function Summary() {
                   <span className=" font-Inter text-sm md:text-base text-raspberry">
                     {listCategoryChoice}
                   </span>
-                  <img src={arrow} alt="arrow-down" className="size-5" />
+                  <button>
+                    {" "}
+                    <img src={arrow} alt="arrow-down" className="size-5" />
+                  </button>
                 </div>
               )}
             >
