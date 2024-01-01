@@ -15,7 +15,7 @@ function Breadcrumbs() {
           const isLast = index === pathnames.length - 1;
   
           return (
-            <div key={routePath} className="text-base lg:text-lg font-light flex justify-center gap-3 md:gap-5 text-light-gray-2">
+            <div key={routePath} className="text-sm lg:text-lg font-light flex justify-center gap-2 md:gap-5 text-light-gray-2">
               <span>/</span>
               {isLast ? (
                 <span>{pathname}</span>
