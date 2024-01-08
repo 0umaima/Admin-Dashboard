@@ -1,7 +1,7 @@
 # Admine-Dashboard
 
 ## Description
-The Admin Project is a web-based application designed to provide administrative functionality for managing various aspects of a system or platform. It serves as a centralized hub for admin to preview analytics and add new  products.
+The Admin Project is a web-based application designed to provide administrative functionality for managing your e-commerce website. It serves as a centralized hub for admin to preview analytics and to add new  products.
 
 ## Installation
 1. Clone the repository to your local machine.
