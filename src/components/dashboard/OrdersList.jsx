@@ -21,7 +21,7 @@ function OrdersList() {
         <p className="font-Inter text-light-gray-2 text-center">
           Add products to your store and start selling to see orders here.
         </p>
-        <Link to="/home/dashboard/add-product">
+        <Link to="/add-product">
           <button className="bg-raspberry text-white flex items-center justify-center gap-5 rounded-xl w-48 p-3">
             <img src={Heart} alt="products" className="size-7" />
             <span className="font-Inter font-light">New Product</span>
